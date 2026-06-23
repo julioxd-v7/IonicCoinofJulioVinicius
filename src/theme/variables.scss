@@ -1,0 +1,92 @@
+/* IonicCoin — Tema "Cofre Digital"
+   Paleta inspirada em dinheiro físico (dourado) + crescimento (verde),
+   construída em tons dessaturados e profundos para ler como fintech
+   premium, não como decoração tropical. */
+
+:root {
+  /* ---------- Superfícies (escala grafite-verde) ---------- */
+  --ic-bg: #0F1813;
+  --ic-bg-elevated: #141F19;
+  --ic-surface: #1B2920;
+  --ic-surface-2: #22332A;
+  --ic-border: #2C3D33;
+  --ic-border-soft: rgba(232, 197, 71, 0.12);
+
+  /* ---------- Dourado (dinheiro) ---------- */
+  --ic-gold: #E8C547;
+  --ic-gold-rgb: 232, 197, 71;
+  --ic-gold-bright: #F4D976;
+  --ic-gold-deep: #B89530;
+  --ic-gold-contrast: #14110A;
+
+  /* ---------- Verde (crescimento) ---------- */
+  --ic-green: #3D9970;
+  --ic-green-rgb: 61, 153, 112;
+  --ic-green-bright: #5FBE92;
+  --ic-green-pastel: #7FB596;
+  --ic-green-deep: #245C42;
+  --ic-green-contrast: #08130E;
+
+  /* ---------- Texto ---------- */
+  --ic-text: #F2F0E6;
+  --ic-text-dim: #AEBBB1;
+  --ic-text-faint: #6E7D73;
+
+  /* ---------- Semânticas ---------- */
+  --ic-danger: #D97757;
+  --ic-warning: var(--ic-gold);
+
+  /* ---------- Tipografia ---------- */
+  --ic-font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --ic-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ic-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* ---------- Mapeamento para variáveis do Ionic ---------- */
+  --ion-background-color: var(--ic-bg);
+  --ion-background-color-rgb: 15, 24, 19;
+  --ion-text-color: var(--ic-text);
+  --ion-text-color-rgb: 242, 240, 230;
+
+  --ion-color-primary: var(--ic-gold);
+  --ion-color-primary-rgb: var(--ic-gold-rgb);
+  --ion-color-primary-contrast: var(--ic-gold-contrast);
+  --ion-color-primary-contrast-rgb: 20, 17, 10;
+  --ion-color-primary-shade: var(--ic-gold-deep);
+  --ion-color-primary-tint: var(--ic-gold-bright);
+
+  --ion-color-secondary: var(--ic-green);
+  --ion-color-secondary-rgb: var(--ic-green-rgb);
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: var(--ic-green-deep);
+  --ion-color-secondary-tint: var(--ic-green-bright);
+
+  --ion-color-light: var(--ic-surface);
+  --ion-color-light-rgb: 27, 41, 32;
+  --ion-color-light-contrast: var(--ic-text);
+  --ion-color-light-contrast-rgb: 242, 240, 230;
+  --ion-color-light-shade: var(--ic-surface-2);
+  --ion-color-light-tint: var(--ic-surface-2);
+
+  --ion-color-medium: var(--ic-text-dim);
+  --ion-color-medium-rgb: 174, 187, 177;
+
+  --ion-color-warning: var(--ic-gold);
+  --ion-color-warning-rgb: var(--ic-gold-rgb);
+  --ion-color-warning-contrast: var(--ic-gold-contrast);
+  --ion-color-warning-contrast-rgb: 20, 17, 10;
+  --ion-color-warning-shade: var(--ic-gold-deep);
+  --ion-color-warning-tint: var(--ic-gold-bright);
+
+  --ion-color-danger: var(--ic-danger);
+  --ion-color-danger-rgb: 217, 119, 87;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #bf6648;
+  --ion-color-danger-tint: #de8a6c;
+
+  --ion-item-background: var(--ic-surface);
+  --ion-toolbar-background: var(--ic-bg-elevated);
+  --ion-tab-bar-background: var(--ic-bg-elevated);
+  --ion-card-background: var(--ic-surface);
+}

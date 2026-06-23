@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>IonicCoin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="status-row" *ngIf="isOffline">
+    <ion-badge class="offline-badge">
+      <ion-icon name="cloud-offline-outline"></ion-icon>
+      Offline · últimas taxas salvas
+    </ion-badge>
+  </div>
+
+  <ion-card class="converter-card">
+    <ion-card-content>
+
+      <ion-item lines="none" class="amount-item">
+        <ion-label position="stacked">Valor</ion-label>
+        <ion-input
+          type="number"
+          inputmode="decimal"
+          [(ngModel)]="amount"
+          (ionInput)="convert()"
+          placeholder="0,00"
+        ></ion-input>
+      </ion-item>
+
+      <div class="divider"></div>
+
+      <ion-item lines="none" class="currency-item">
+        <ion-label position="stacked">De</ion-label>
+        <ion-select
+          [(ngModel)]="fromCurrency"
+          (ionChange)="onCurrencyChange()"
+          interface="popover"
+          justify="start"
+        >
+          <ion-select-option
+            *ngFor="let c of currencies"
+            [value]="c.code"
+          >
+            {{ c.code }} · {{ c.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <button class="swap-btn" (click)="swapCurrencies()" aria-label="Inverter moedas">
+        <ion-icon name="swap-vertical-outline"></ion-icon>
+      </button>
+
+      <ion-item lines="none" class="currency-item">
+        <ion-label position="stacked">Para</ion-label>
+        <ion-select
+          [(ngModel)]="toCurrency"
+          (ionChange)="convert()"
+          interface="popover"
+          justify="start"
+        >
+          <ion-select-option
+            *ngFor="let c of currencies"
+            [value]="c.code"
+          >
+            {{ c.code }} · {{ c.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="!loading; else loadingTpl">
+    <div class="result-card" *ngIf="result !== null">
+      <span class="result-label">Você recebe</span>
+      <h1 class="result-value">
+        <span class="result-currency">{{ toCurrency }}</span>{{ result | number: '1.2-2' }}
+      </h1>
+      <div class="result-meta" *ngIf="currentRate !== null">
+        <span>1 {{ fromCurrency }} = {{ currentRate | number: '1.4-4' }} {{ toCurrency }}</span>
+        <span class="dot" *ngIf="lastUpdateDate">·</span>
+        <span *ngIf="lastUpdateDate">{{ lastUpdateDate }}</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loadingTpl>
+    <div class="loading-state ion-text-center">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Buscando taxas de câmbio...</p>
+    </div>
+  </ng-template>
+
+</ion-content>
+
+<app-footer></app-footer>

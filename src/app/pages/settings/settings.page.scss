@@ -1,0 +1,38 @@
+.section-eyebrow {
+  font-family: var(--ic-font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ic-green-pastel);
+  margin: 18px 4px 8px 4px;
+
+  &:first-of-type {
+    margin-top: 4px;
+  }
+}
+
+.settings-card {
+  margin: 0 0 4px 0;
+}
+
+.toggle-item {
+  --padding-start: 0;
+
+  ion-label {
+    h3 {
+      font-family: var(--ic-font-body);
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--ic-text);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    p {
+      font-size: 0.76rem;
+      color: var(--ic-text-faint);
+      margin-top: 2px;
+    }
+  }
+}

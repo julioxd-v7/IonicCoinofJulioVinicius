@@ -1,0 +1,159 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* ===========================================================
+   IonicCoin — Identidade visual global
+   =========================================================== */
+
+body {
+  font-family: var(--ic-font-body);
+  background:
+    radial-gradient(circle at 12% -10%, rgba(var(--ic-gold-rgb), 0.10), transparent 40%),
+    radial-gradient(circle at 88% 0%, rgba(var(--ic-green-rgb), 0.14), transparent 45%),
+    var(--ic-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ic-font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Toolbar / header */
+ion-toolbar {
+  --background: var(--ic-bg-elevated);
+  --color: var(--ic-text);
+  --border-color: transparent;
+  --padding-top: 4px;
+  --padding-bottom: 4px;
+}
+
+ion-toolbar ion-title {
+  font-family: var(--ic-font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+ion-header {
+  &::after {
+    background-image: none !important;
+  }
+  border-bottom: 1px solid var(--ic-border);
+}
+
+/* Tab bar */
+ion-tab-bar {
+  --background: var(--ic-bg-elevated);
+  --border: 1px solid var(--ic-border);
+  padding-top: 6px;
+  padding-bottom: max(6px, env(safe-area-inset-bottom));
+}
+
+ion-tab-button {
+  --color: var(--ic-text-faint);
+  --color-selected: var(--ic-gold);
+  font-family: var(--ic-font-body);
+
+  ion-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-top: 4px;
+  }
+
+  ion-icon {
+    font-size: 1.35rem;
+  }
+}
+
+/* Cards */
+ion-card {
+  --background: var(--ic-surface);
+  border: 1px solid var(--ic-border);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.55);
+}
+
+/* Items / inputs */
+ion-item {
+  --background: transparent;
+  --border-color: var(--ic-border);
+  --color: var(--ic-text);
+  --highlight-color-focused: var(--ic-gold);
+  --padding-start: 0;
+  --inner-padding-end: 0;
+
+  ion-label {
+    color: var(--ic-text-dim) !important;
+    font-weight: 500;
+    font-size: 0.78rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
+
+ion-select {
+  --placeholder-color: var(--ic-text-faint);
+  font-family: var(--ic-font-display);
+  font-weight: 600;
+  width: 100%;
+  max-width: 100%;
+}
+
+ion-input {
+  font-family: var(--ic-font-mono);
+  font-weight: 600;
+  font-size: 1.6rem !important;
+  --color: var(--ic-text);
+  --placeholder-color: var(--ic-text-faint);
+  --placeholder-opacity: 1;
+}
+
+/* Listas (histórico) */
+ion-list {
+  background: transparent;
+}
+
+/* Toggle */
+ion-toggle {
+  --background: var(--ic-surface-2);
+  --background-checked: var(--ic-green);
+  --handle-background: var(--ic-text);
+  --handle-background-checked: #ffffff;
+}
+
+/* Scrollbar discreta (desktop/web) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ic-border);
+  border-radius: 8px;
+}
+
+/* Acessibilidade: foco visível */
+:focus-visible {
+  outline: 2px solid var(--ic-gold);
+  outline-offset: 2px;
+}
+
+/* Movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
